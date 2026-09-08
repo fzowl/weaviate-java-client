@@ -7,9 +7,21 @@ import com.google.gson.annotations.SerializedName;
 import io.weaviate.client6.v1.api.collections.Reranker;
 import io.weaviate.client6.v1.internal.ObjectBuilder;
 
+/**
+ * {@code reranker-voyageai} reranker, backed by VoyageAI by MongoDB reranker
+ * models.
+ */
 public record VoyageAiReranker(
     @SerializedName("model") String model) implements Reranker {
 
+  // Current VoyageAI by MongoDB reranker models.
+  // See https://docs.voyageai.com/docs/reranker
+  public static final String RERANK_3 = "rerank-3";
+  public static final String RERANK_3_LITE = "rerank-3-lite";
+  public static final String RERANK_2_5 = "rerank-2.5";
+  public static final String RERANK_2_5_LITE = "rerank-2.5-lite";
+
+  // Legacy models, still reachable through the API.
   public static final String RERANK_1 = "rerank-1";
   public static final String RERANK_LITE_1 = "rerank-lite-1";
   public static final String RERANK_2 = "rerank-2";

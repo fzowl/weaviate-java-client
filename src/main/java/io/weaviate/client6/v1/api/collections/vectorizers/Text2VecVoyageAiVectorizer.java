@@ -11,6 +11,10 @@ import io.weaviate.client6.v1.api.collections.VectorConfig;
 import io.weaviate.client6.v1.api.collections.VectorIndex;
 import io.weaviate.client6.v1.internal.ObjectBuilder;
 
+/**
+ * {@code text2vec-voyageai} vectorizer, backed by VoyageAI by MongoDB embedding
+ * models.
+ */
 public record Text2VecVoyageAiVectorizer(
     @SerializedName("baseURL") String baseUrl,
     @SerializedName("model") String model,
@@ -40,12 +44,24 @@ public record Text2VecVoyageAiVectorizer(
     return this;
   }
 
-  public static String  VOYAGE_3_LARGE =  "voyage-3-large";
-  public static String  VOYAGE_3_5 =  "voyage-3.5";
-  public static String  VOYAGE_3_5_lite =  "voyage-3.5-lite";
-  public static String  VOYAGE_3 =  "voyage-3";
-  public static String  VOYAGE_3_LITE =  "voyage-3-lite";
-  public static String  VOYAGE_CONTEXT_3 =  "voyage-context-3";
+  // Current VoyageAI by MongoDB models.
+  // See https://docs.voyageai.com/docs/embeddings
+  public static String VOYAGE_4_LARGE = "voyage-4-large";
+  public static String VOYAGE_4 = "voyage-4";
+  public static String VOYAGE_4_LITE = "voyage-4-lite";
+  public static String VOYAGE_CODE_4 = "voyage-code-4";
+  public static String VOYAGE_FINANCE_2 = "voyage-finance-2";
+  public static String VOYAGE_LAW_2 = "voyage-law-2";
+  /** Contextualized-chunk embedding model. */
+  public static String VOYAGE_CONTEXT_4 = "voyage-context-4";
+
+  // Legacy models, still reachable through the API.
+  public static String VOYAGE_3_LARGE = "voyage-3-large";
+  public static String VOYAGE_3_5 = "voyage-3.5";
+  public static String VOYAGE_3_5_lite = "voyage-3.5-lite";
+  public static String VOYAGE_3 = "voyage-3";
+  public static String VOYAGE_3_LITE = "voyage-3-lite";
+  public static String VOYAGE_CONTEXT_3 = "voyage-context-3";
 
   public static Text2VecVoyageAiVectorizer of() {
     return of(ObjectBuilder.identity());

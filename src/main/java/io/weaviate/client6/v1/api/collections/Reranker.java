@@ -77,13 +77,13 @@ public interface Reranker extends TaggedUnion<Reranker.Kind, Object> {
     return JinaAiReranker.of(fn);
   }
 
-  /** Configure a default VoyageAI reranker module. */
+  /** Configure a default VoyageAI by MongoDB reranker module. */
   public static Reranker voyageai() {
     return VoyageAiReranker.of();
   }
 
   /**
-   * Configure a VoyageAI reranker module.
+   * Configure a VoyageAI by MongoDB reranker module.
    *
    * @param fn Lambda expression for optional parameters.
    */

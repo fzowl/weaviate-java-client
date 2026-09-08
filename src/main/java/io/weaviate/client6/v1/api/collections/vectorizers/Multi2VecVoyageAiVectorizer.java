@@ -12,6 +12,10 @@ import io.weaviate.client6.v1.api.collections.VectorConfig;
 import io.weaviate.client6.v1.api.collections.VectorIndex;
 import io.weaviate.client6.v1.internal.ObjectBuilder;
 
+/**
+ * {@code multi2vec-voyageai} vectorizer, backed by VoyageAI by MongoDB
+ * multimodal embedding models.
+ */
 public record Multi2VecVoyageAiVectorizer(
     /** Base URL of the embedding service. */
     @SerializedName("baseURL") String baseUrl,
@@ -41,6 +45,12 @@ public record Multi2VecVoyageAiVectorizer(
        */
       @SerializedName("textWeights") List<Float> textWeights) {
   }
+
+  // Current VoyageAI by MongoDB multimodal models.
+  // See https://docs.voyageai.com/docs/multimodal-embeddings
+  public static String VOYAGE_MULTIMODAL_3_5 = "voyage-multimodal-3.5";
+  // Legacy model, still reachable through the API.
+  public static String VOYAGE_MULTIMODAL_3 = "voyage-multimodal-3";
 
   @Override
   public VectorConfig.Kind _kind() {
