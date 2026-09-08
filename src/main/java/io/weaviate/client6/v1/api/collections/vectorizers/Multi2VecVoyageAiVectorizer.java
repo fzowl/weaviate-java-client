@@ -52,6 +52,10 @@ public record Multi2VecVoyageAiVectorizer(
     return this;
   }
 
+  // Multimodal embedding models. See https://docs.voyageai.com/docs/multimodal-embeddings
+  public static String VOYAGE_MULTIMODAL_3_5 = "voyage-multimodal-3.5";
+  public static String VOYAGE_MULTIMODAL_3 = "voyage-multimodal-3";
+
   public static Multi2VecVoyageAiVectorizer of() {
     return of(ObjectBuilder.identity());
   }

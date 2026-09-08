@@ -40,6 +40,18 @@ public record Text2VecVoyageAiVectorizer(
     return this;
   }
 
+  // Current-generation models. See https://docs.voyageai.com/docs/embeddings
+  public static String  VOYAGE_4_LARGE =  "voyage-4-large";
+  public static String  VOYAGE_4 =  "voyage-4";
+  public static String  VOYAGE_4_LITE =  "voyage-4-lite";
+  public static String  VOYAGE_CODE_4 =  "voyage-code-4";
+  public static String  VOYAGE_FINANCE_2 =  "voyage-finance-2";
+  public static String  VOYAGE_LAW_2 =  "voyage-law-2";
+  // Contextualized-chunk embeddings.
+  // See https://docs.voyageai.com/docs/contextualized-chunk-embeddings
+  public static String  VOYAGE_CONTEXT_4 =  "voyage-context-4";
+
+  // Legacy models (still accessible, superseded by the models above).
   public static String  VOYAGE_3_LARGE =  "voyage-3-large";
   public static String  VOYAGE_3_5 =  "voyage-3.5";
   public static String  VOYAGE_3_5_lite =  "voyage-3.5-lite";
