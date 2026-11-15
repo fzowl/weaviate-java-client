@@ -11,6 +11,16 @@ import io.weaviate.client6.v1.api.collections.VectorConfig;
 import io.weaviate.client6.v1.api.collections.VectorIndex;
 import io.weaviate.client6.v1.internal.ObjectBuilder;
 
+/**
+ * Voyage AI by MongoDB text vectorizer ({@code text2vec-voyageai} module).
+ *
+ * <p>
+ * The model constants are provided for convenience; any model name supported by
+ * Voyage AI can be passed to {@link Builder#model(String)}.
+ *
+ * @see <a href="https://docs.voyageai.com/docs/embeddings">Voyage AI text
+ *      embeddings</a>
+ */
 public record Text2VecVoyageAiVectorizer(
     @SerializedName("baseURL") String baseUrl,
     @SerializedName("model") String model,
@@ -40,6 +50,16 @@ public record Text2VecVoyageAiVectorizer(
     return this;
   }
 
+  public static final String VOYAGE_4_LARGE = "voyage-4-large";
+  public static final String VOYAGE_4 = "voyage-4";
+  public static final String VOYAGE_4_LITE = "voyage-4-lite";
+  public static final String VOYAGE_CODE_4 = "voyage-code-4";
+  public static final String VOYAGE_CODE_3 = "voyage-code-3";
+  public static final String VOYAGE_FINANCE_2 = "voyage-finance-2";
+  public static final String VOYAGE_LAW_2 = "voyage-law-2";
+  public static final String VOYAGE_CONTEXT_4 = "voyage-context-4";
+
+  // Previous-generation models.
   public static String  VOYAGE_3_LARGE =  "voyage-3-large";
   public static String  VOYAGE_3_5 =  "voyage-3.5";
   public static String  VOYAGE_3_5_lite =  "voyage-3.5-lite";

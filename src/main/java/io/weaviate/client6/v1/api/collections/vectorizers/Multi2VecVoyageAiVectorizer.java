@@ -12,6 +12,17 @@ import io.weaviate.client6.v1.api.collections.VectorConfig;
 import io.weaviate.client6.v1.api.collections.VectorIndex;
 import io.weaviate.client6.v1.internal.ObjectBuilder;
 
+/**
+ * Voyage AI by MongoDB multimodal vectorizer ({@code multi2vec-voyageai}
+ * module).
+ *
+ * <p>
+ * The model constants are provided for convenience; any model name supported by
+ * Voyage AI can be passed to {@link Builder#model(String)}.
+ *
+ * @see <a href="https://docs.voyageai.com/docs/multimodal-embeddings">Voyage AI
+ *      multimodal embeddings</a>
+ */
 public record Multi2VecVoyageAiVectorizer(
     /** Base URL of the embedding service. */
     @SerializedName("baseURL") String baseUrl,
@@ -51,6 +62,9 @@ public record Multi2VecVoyageAiVectorizer(
   public Object _self() {
     return this;
   }
+
+  public static final String VOYAGE_MULTIMODAL_3_5 = "voyage-multimodal-3.5";
+  public static final String VOYAGE_MULTIMODAL_3 = "voyage-multimodal-3";
 
   public static Multi2VecVoyageAiVectorizer of() {
     return of(ObjectBuilder.identity());
